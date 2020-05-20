@@ -9,7 +9,7 @@ const post=require('./mymodules/postProcess');
             account: config.ACCOUNTNAME,
             username: config.USERNAME,
             password: config.PASSWORD,
-            warehouse:warehouse,
+            warehouse:'warehouse',
             database:'SNOWFLAKE_SAMPLE_DATA',
             schema:'tpch_sf1'
             }
@@ -33,8 +33,7 @@ const post=require('./mymodules/postProcess');
           ]);
         
 
-        //await exe.exeSingleQuery(connection,'ALTER WAREHOUSE IF EXISTS KAYANO_DATA SUSPEND');
-
+       
         //ヒストリーをCSV化
         post.postProcess('out9.csv','SNOWFLAKE_SAMPLE_DATA',sessionId);
 
